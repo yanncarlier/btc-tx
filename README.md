@@ -1,5 +1,5 @@
-# bitcoin-tx
+# bitcoin-tx  
 
-cargo run
-cargo build
-cargo build --release
+cargo run  
+cargo build  
+cargo build --release  
