@@ -2,7 +2,7 @@ use bitcoincore_rpc::bitcoin::Amount;
 use bitcoincore_rpc::{json, Auth, Client, RpcApi};
 use std::collections::HashMap;
 
-fn sendtx() {
+fn fnsendtx() {
     let rpc = Client::new(
         "http://localhost:18332".to_string(),
         Auth::UserPass(

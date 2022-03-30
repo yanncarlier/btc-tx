@@ -1,3 +1,6 @@
+mod getinfo;
+
 fn main() {
-    println!("Hello, world!");
+    // println!("Hello, world!");
+    getinfo::fngetinfo();
 }
