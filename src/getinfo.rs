@@ -1,11 +1,11 @@
 use bitcoincore_rpc::{Auth, Client, RpcApi};
 
 pub fn fngetinfo() {
-    let peer = "http://localhost:18332";
-    let user = "StandUp";
-    let pass = "6305f1b2dbb3bc5a16cd0f4aac7e1eba";
+    let peer = String::from("http://localhost:18332");
+    let user = String::from("StandUp");
+    let pass = String::from("6305f1b2dbb3bc5a16cd0f4aac7e1eba");
 
-    let rpc = Client::new(peer, Auth::UserPass(user.to_string(), pass.to_string())).unwrap();
+    let rpc = Client::new(&peer, Auth::UserPass(user, pass)).unwrap();
 
     let mining_info = rpc.get_mining_info().unwrap();
     println!("{:#?}", mining_info);
