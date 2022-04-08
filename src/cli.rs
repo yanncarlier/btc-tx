@@ -1,25 +1,39 @@
+use regex::Regex;
 use std::env;
 
-pub fn run() {
+pub fn fncli() {
     let args: Vec<String> = env::args().collect();
-    let command = args[1].clone();
-    // let name = "Brad";
-    // let status = "100%";
-    let peer = "http://localhost:18332";
-    let user = "user";
-    let pass = "pass";
+    // let command = args.clone();
+    // println!("{:?}", args);
+    let peer = &args[1];
+    let user = &args[2];
+    let pass = &args[3];
 
-    // println!("Command: {}", command);
+    let re = Regex::new(r"^(.*:)//([A-Za-z0-9\-\.]+)(:[0-9]+)?(.*)$").unwrap();
+    assert!(re.is_match(peer));
+    let caps = re.captures(peer).unwrap();
+    let protocol = &caps[1];
+    let host = &caps[2];
+    let port = &caps[3];
+    let path = &caps[4];
+    println!("{}", protocol);
+    println!("{}", host);
+    println!("{}", port);
+    println!("{}", path);
 
-    if command == "peer" {
+    if peer == "peer" {
         println!("peer: {}", peer);
-    } else if command == "user" {
-        println!("user: {}", user);
-    } else if command == "pass" {
-        println!("pass: {}", pass);
     } else {
         println!("That is not a valid command");
     }
+
+    if user == "user" {
+        println!("user: {}", user);
+    }
+
+    if pass == "pass" {
+        println!("pass: {}", pass);
+    };
 }
 
 // let peer = args.peer;

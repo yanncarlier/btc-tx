@@ -1,6 +1,10 @@
-mod getinfo;
+mod cli;
+// mod getinfo;
+// mod sendtx;
 
 fn main() {
     // println!("Hello, world!");
-    getinfo::fngetinfo();
+    cli::fncli();
+    //getinfo::fngetinfo();
+    //sendtx::fnsendtx();
 }
