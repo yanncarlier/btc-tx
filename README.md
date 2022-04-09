@@ -1,3 +1,5 @@
+Note: this is a project to test the rust programing language, I not sure what to do with it yet  
+
 ## Start a bitcoin regtest node
 
 ```bash
