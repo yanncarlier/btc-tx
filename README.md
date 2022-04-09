@@ -1,4 +1,5 @@
-Note: this is a project to test the rust programing language, I not sure what to do with it yet  
+Note: this is a project for me to test the rust programing language,  
+I am not sure what to do with it yet  ... 
 
 ## Start a bitcoin regtest node
 
