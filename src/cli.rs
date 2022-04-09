@@ -9,7 +9,11 @@ pub fn fncli() {
     let user = &args[2];
     let pass = &args[3];
 
-    let re = Regex::new(r"^(.*:)//([A-Za-z0-9\-\.]+)(:[0-9]+)?(.*)$").unwrap();
+    // regex to validate url
+    let re =
+        Regex::new(r"^(http|https)://[a-zA-Z0-9_]+:[a-zA-Z0-9_]+@[a-zA-Z0-9_]+:[0-9]+$").unwrap();
+
+    //let re = Regex::new(r"^(.*:)//([A-Za-z0-9\-\.]+)(:[0-9]+)?(.*)$").unwrap();
     assert!(re.is_match(peer));
     let caps = re.captures(peer).unwrap();
     let protocol = &caps[1];
